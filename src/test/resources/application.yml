@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: test
+endpoints:
+  shutdown:
+    enabled: true
+server:
+  port: 0
+environments:
+    testing:
+        dataSource:
+            driverClassName: 'com.mysql.jdbc.Driver'
+            url: jdbc:mysql://localhost/mysqldb
+            username:
+            password:
+
+---
+spring:
+  profiles: test
