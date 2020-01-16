@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: planning-service
+  profiles:
+    active: dev
+info:
+  version: '@project.version@'
+endpoints:
+  shutdown:
+    enabled: true
+server:
+  port: 8080
+environments:
+    production:
+        dataSource:
+            driverClassName: 'com.mysql.jdbc.Driver'
+            url: jdbc:mysql://localhost/mysqldb
+            username:
+            password:
+
+---
+spring:
+  profiles: dev
+
+---
+spring:
+  profiles: docker
