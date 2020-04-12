@@ -1,18 +1,25 @@
 spring:
   profiles:
     active: test
-endpoints:
-  shutdown:
-    enabled: true
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+      
 server:
   port: 0
-environments:
-    testing:
-        dataSource:
-            driverClassName: 'com.mysql.jdbc.Driver'
-            url: jdbc:mysql://localhost/mysqldb
-            username:
-            password:
+---
+spring:
+  dataSource:
+    driverClassName: org.hsqldb.jdbc.JDBCDriver
+    url: jdbc:hsqldb:mem:testdb;DB_CLOSE_DELAY=-1
+    username: sa
+    password: 
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    generate-ddl: true
+    show-sql: true      
 
 ---
 spring:

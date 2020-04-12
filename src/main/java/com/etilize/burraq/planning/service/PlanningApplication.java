@@ -35,7 +35,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Represents the Application class which houses the main entry-point to run the application
  *
  * @author Faisal Feroz
- *
+ * @since 1.0
  */
 @SpringBootApplication
 public class PlanningApplication {
@@ -49,7 +49,7 @@ public class PlanningApplication {
     /**
      * main entry-point
      *
-     * @param args
+     * @param args main method argument
      */
     public static void main(String[] args) {
         SpringApplication.run(PlanningApplication.class, args);

@@ -26,27 +26,14 @@
  * #endregion
  */
 
-package com.etilize.burraq.planning.service.test;
-
-import org.springframework.test.context.TestExecutionListeners;
-import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
-import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
-import org.springframework.test.context.web.ServletTestExecutionListener;
-
-import com.github.springtestdbunit.DbUnitTestExecutionListener;
-import com.github.springtestdbunit.annotation.DatabaseTearDown;
+package com.etilize.burraq.planning.service;
 
 /**
- * Base class for integration tests
+ * Plan Task Status Enum
  *
- * @author Faisal Feroz
+ * @author Nasir Ahmed
  * @since 1.0
- *
  */
-@TestExecutionListeners(listeners = { DependencyInjectionTestExecutionListener.class,
-    TransactionalTestExecutionListener.class, ServletTestExecutionListener.class,
-    DbUnitTestExecutionListener.class })
-@DatabaseTearDown("resetDB.xml")
-public abstract class AbstractIntegrationTest extends AbstractTest {
-
+public enum TaskStatus {
+    TODO, IN_PROGRESS, COMPLETE;
 }

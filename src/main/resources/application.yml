@@ -5,18 +5,25 @@ spring:
     active: dev
 info:
   version: '@project.version@'
-endpoints:
-  shutdown:
-    enabled: true
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+
 server:
   port: 8080
-environments:
-    production:
-        dataSource:
-            driverClassName: 'com.mysql.jdbc.Driver'
-            url: jdbc:mysql://localhost/mysqldb
-            username:
-            password:
+---
+spring:
+  dataSource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: 
+    password: 
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    show-sql: true
 
 ---
 spring:
